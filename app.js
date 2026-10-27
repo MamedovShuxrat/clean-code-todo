@@ -7,10 +7,10 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-const taskInput = document.getElementById("new-task"); //Add a new task.
-const addButton = document.getElementsByTagName("button")[0]; //first button
+const taskInput = document.getElementById("newTask"); //Add a new task.
+const addTaskButton = document.getElementById("addTaskButton"); //first button
 const incompleteTaskHolder = document.getElementById("incompleteTasks"); //ul of #incompleteTasks
-const completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
+const completedTasksHolder = document.getElementById("completedTasks"); //completed-tasks
 
 //New task list item
 const createNewTaskElement = function (taskString) {
@@ -54,7 +54,7 @@ const createNewTaskElement = function (taskString) {
 };
 
 const addTask = function () {
-  //Create a new list item with the text from the #new-task:
+  //Create a new list item with the text from the #newTask:
   if (!taskInput.value) return;
   const listItem = createNewTaskElement(taskInput.value);
 
@@ -73,10 +73,10 @@ const editTask = function () {
   const editInput = listItem.querySelector("input[type=text]");
   const label = listItem.querySelector("label");
   const editBtn = listItem.querySelector(".edit");
-  const containsClass = listItem.classList.contains("editMode");
-  //If class of the parent is .editmode
+  const containsClass = listItem.classList.contains("edit-mode");
+  //If class of the parent is .edit-mode
   if (containsClass) {
-    //switch to .editmode
+    //switch to .edit-mode
     //label becomes the inputs value.
     label.innerText = editInput.value;
     editBtn.innerText = "Edit";
@@ -85,8 +85,8 @@ const editTask = function () {
     editBtn.innerText = "Save";
   }
 
-  //toggle .editmode on the parent.
-  listItem.classList.toggle("editMode");
+  //toggle .edit-mode on the parent.
+  listItem.classList.toggle("edit-mode");
 };
 
 //Delete task.
@@ -116,7 +116,7 @@ const taskIncomplete = function () {
 //The glue to hold it all together.
 
 //Set the click handler to the addTask function.
-addButton.addEventListener("click", addTask);
+addTaskButton.addEventListener("click", addTask);
 
 const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   //select ListItems children

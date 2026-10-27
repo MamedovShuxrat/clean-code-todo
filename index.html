@@ -15,7 +15,7 @@
     />
   </head>
   <body>
-    <div class="aaa">
+    <div class="more">
       <img src="./eisenhower-matrix.jpg" /><a
         class="more_inf"
         href="https://goal-life.com/page/method/matrix-eisenhower"
@@ -24,10 +24,10 @@
     </div>
     <div class="centered-main-page-element">
       <div id="topSectionForAddingElementToList">
-        <label for="new-task">Add Item</label>
+        <label for="newTask">Add Item</label>
         <div class="task-row-wrapper">
-          <input id="new-task" class="task" type="text" />
-          <button>Add</button>
+          <input id="newTask" class="task" type="text" />
+          <button id="addTaskButton">Add</button>
         </div>
       </div>
       <h3>Todo</h3>
@@ -37,7 +37,7 @@
           ><input type="text" class="task" /><button class="edit">Edit</button
           ><button class="delete"><img src="./remove.svg" /></button>
         </li>
-        <li class="editMode">
+        <li class="edit-mode">
           <input type="checkbox" /><label class="task">Go Shopping</label
           ><input type="text" value="Go Shopping" class="task" /><button
             class="edit"
@@ -47,7 +47,7 @@
         </li>
       </ul>
       <h3>Completed</h3>
-      <ul id="completed-tasks">
+      <ul id="completedTasks">
         <li>
           <input type="checkbox" checked /><label class="task"
             >See the Doctor</label
